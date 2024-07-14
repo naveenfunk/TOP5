@@ -13,7 +13,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class AuthRemoteDataSourceImpl @Inject constructor(): AuthRemoteDataSource {
+class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSource {
 
     private var auth: FirebaseAuth = Firebase.auth
 
@@ -40,5 +40,13 @@ class AuthRemoteDataSourceImpl @Inject constructor(): AuthRemoteDataSource {
                 else -> BaseAuthException.UnknownException()
             }
         }
+    }
+
+    override fun isUserSessionActive(): Boolean {
+        return auth.currentUser != null
+    }
+
+    override fun logout() {
+        auth.signOut()
     }
 }

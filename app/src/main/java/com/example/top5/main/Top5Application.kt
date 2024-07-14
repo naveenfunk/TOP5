@@ -1,4 +1,4 @@
-package com.example.top5
+package com.example.top5.main
 
 import android.app.Application
 import com.google.firebase.FirebaseApp

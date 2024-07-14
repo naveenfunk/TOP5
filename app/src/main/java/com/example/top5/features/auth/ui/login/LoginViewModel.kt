@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.top5.features.auth.domain.models.BaseAuthException
 import com.example.top5.features.auth.domain.models.LoginException
+import com.example.top5.features.auth.domain.usecase.IsUserLoggedInUseCase
 import com.example.top5.features.auth.domain.usecase.LoginUseCase
 import com.example.top5.features.auth.domain.usecase.ValidateCredentialsUseCase
 import com.example.top5.features.auth.ui.AuthRequestState
@@ -18,7 +19,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val validateCredentialsUseCase: ValidateCredentialsUseCase,
-    private val loginUseCase: LoginUseCase
+    private val loginUseCase: LoginUseCase,
+    private val isUserLoggedInUseCase: IsUserLoggedInUseCase
 ) : ViewModel() {
 
     private val _loginState = MutableLiveData<AuthRequestState>()
@@ -29,6 +31,8 @@ class LoginViewModel @Inject constructor(
             AuthRequestState.Error(exception = Exception(throwable))
         )
     }
+
+    fun isUserLoggedIn() = isUserLoggedInUseCase()
 
     fun login(username: String, password: String) {
         try {

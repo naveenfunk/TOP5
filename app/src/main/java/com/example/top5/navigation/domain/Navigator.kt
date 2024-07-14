@@ -9,4 +9,8 @@ interface Navigator {
     fun navigateFromLoginToHome()
 
     fun navigateBack()
+
+    fun setHomeAsStartDestination()
+
+    fun navigateFromHomeToLogin()
 }

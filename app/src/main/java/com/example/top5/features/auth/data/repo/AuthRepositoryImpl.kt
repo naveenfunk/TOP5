@@ -15,7 +15,11 @@ class AuthRepositoryImpl @Inject constructor(
         authRemoteDataSource.signUp(username, password)
     }
 
-    override suspend fun logout(userId: String) {
+    override fun logout() {
+        authRemoteDataSource.logout()
+    }
 
+    override fun isUserLoggedIn(): Boolean {
+        return authRemoteDataSource.isUserSessionActive()
     }
 }
