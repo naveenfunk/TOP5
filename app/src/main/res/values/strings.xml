@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">TOP5</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="enter_username">Enter username</string>
+    <string name="enter_username">Enter email</string>
     <string name="enter_password">Enter password</string>
     <string name="login">Login</string>
     <string name="confirm_password">Confirm Password</string>
@@ -18,4 +18,17 @@
     <string name="weak_password_error">Please enter strong password!</string>
     <string name="loading_text">Loading . . .</string>
     <string name="sign_up_success_message">Account created successfully. Please login!</string>
+    <string name="top_5">Top 5</string>
+    <string name="find_user">Find User</string>
+    <string name="add_top_5">Add TOP 5</string>
+    <string name="find_by_email">Find by email</string>
+    <string name="create">Create</string>
+    <string name="title">Title</string>
+    <string name="emoji_hint">🙂</string>
+    <string name="add_movie">Add Movie</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="search_by_name">Search by name</string>
+    <string name="logout">Logout</string>
 </resources>

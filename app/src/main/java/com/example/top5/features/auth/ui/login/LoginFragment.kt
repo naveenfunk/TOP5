@@ -50,7 +50,11 @@ class LoginFragment : Fragment() {
         toggleLoading(loading = false)
         loginViewModel.loginState.observe(viewLifecycleOwner) { loginState ->
             when (loginState) {
-                is AuthRequestState.Success -> toggleLoading(loading = false)
+                is AuthRequestState.Success -> {
+                    navigator.navigateFromLoginToHome()
+                    toggleLoading(loading = false)
+                }
+
                 is AuthRequestState.Error -> {
                     toggleLoading(loading = false)
                     showErrorToast(loginState)

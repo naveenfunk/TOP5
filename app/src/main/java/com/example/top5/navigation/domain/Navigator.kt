@@ -6,5 +6,7 @@ interface Navigator {
 
     fun navigateFromLoginToSignUp()
 
+    fun navigateFromLoginToHome()
+
     fun navigateBack()
 }

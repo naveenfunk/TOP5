@@ -27,4 +27,8 @@ class NavigatorImpl @Inject constructor(
     override fun navigateFromLoginToSignUp() {
         navController.navigate(R.id.action_loginFragment_to_signUpFragment)
     }
+
+    override fun navigateFromLoginToHome() {
+        navController.navigate(R.id.action_loginFragment_to_profileFragment)
+    }
 }
