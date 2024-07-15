@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <dimen name="space_xxs">2dp</dimen>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">16dp</dimen>
+    <dimen name="space_l">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+    <dimen name="space_xxl">64dp</dimen>
+
+    <dimen name="text_s">12sp</dimen>
+    <dimen name="text_m">16sp</dimen>
+    <dimen name="text_l">24sp</dimen>
+    <dimen name="text_xl">32sp</dimen>
+
+    <dimen name="movie_item_height">120dp</dimen>
+</resources>
