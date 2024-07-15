@@ -57,10 +57,12 @@ class TopFiveFragment : Fragment() {
         }
 
         binding.createList.setOnClick {
-            topFiveViewModel.createFavorite(
-                binding.emoji.text.toString(),
-                binding.listTitle.text.toString()
-            )
+            if (binding.listTitle.text.toString().isNotBlank()) {
+                topFiveViewModel.createFavorite(
+                    binding.emoji.text.toString(),
+                    binding.listTitle.text.toString()
+                )
+            }
         }
         topFiveViewModel.isOnlyViewable.observe(viewLifecycleOwner) { viewable ->
             binding.createList.visibility = if (viewable) View.GONE else View.VISIBLE

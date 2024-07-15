@@ -34,8 +34,16 @@ class FavoriteRemoteDataSourceImpl @Inject constructor() : FavoriteRemoteDataSou
         return movieLists
     }
 
-    override suspend fun updateFavorite(favorite: FavoriteDto) {
-        getFavoriteById(favorite.id).reference.set(favorite).await()
+    override suspend fun updateFavorite(favoriteId: String, emoji: String, title: String) {
+        val movieListRef = getFavoriteById(favoriteId).reference
+
+        db.runTransaction { transaction ->
+            val favorite = transaction.get(movieListRef).toObject(FavoriteDto::class.java)
+                ?: throw Exception("favorite not found")
+
+            val updatedMovies = favorite.copy(emoji = emoji, title = title)
+            transaction.set(movieListRef, updatedMovies)
+        }.await()
     }
 
     override suspend fun deleteFavorite(favoriteId: String) {

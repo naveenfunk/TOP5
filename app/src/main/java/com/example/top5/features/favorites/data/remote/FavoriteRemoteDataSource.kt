@@ -5,7 +5,7 @@ import com.example.top5.features.movies.data.models.MovieDto
 
 interface FavoriteRemoteDataSource {
     suspend fun createFavorite(favorite: FavoriteDto): String
-    suspend fun updateFavorite(favorite: FavoriteDto)
+    suspend fun updateFavorite(favoriteId: String, emoji: String, title: String)
     suspend fun getFavorites(userEmail: String): List<FavoriteDto>
     suspend fun deleteFavorite(favoriteId: String)
     suspend fun getFavorite(favoriteId: String): FavoriteDto

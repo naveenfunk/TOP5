@@ -12,6 +12,7 @@ import com.example.top5.features.favorites.domain.usecase.CreateFavoriteUseCase
 import com.example.top5.features.favorites.domain.usecase.DeleteMovieFromFavoriteUseCase
 import com.example.top5.features.favorites.domain.usecase.GetSingleFavoriteUseCase
 import com.example.top5.features.favorites.domain.usecase.GetTopFiveMovieListUseCase
+import com.example.top5.features.favorites.domain.usecase.UpdateFavoriteUseCase
 import com.example.top5.features.favorites.ui.models.FavoriteListItem
 import com.example.top5.features.favorites.ui.models.MovieListItem
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,6 +28,7 @@ class TopFiveViewModel @Inject constructor(
     private val createFavoriteUseCase: CreateFavoriteUseCase,
     private val currentUserUseCase: GetCurrentUserUseCase,
     private val getSingleFavoriteUseCase: GetSingleFavoriteUseCase,
+    private val updateFavoriteUseCase: UpdateFavoriteUseCase,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -40,7 +42,7 @@ class TopFiveViewModel @Inject constructor(
     val favoriteDat: LiveData<FavoriteListItem> = _favoriteData
 
     private val _isOnlyViewable = MutableLiveData<Boolean>(favoriteId == null)
-    val isOnlyViewable : LiveData<Boolean> = _isOnlyViewable
+    val isOnlyViewable: LiveData<Boolean> = _isOnlyViewable
 
     private val movieListExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         _movieList.postValue(emptyList())
@@ -75,15 +77,22 @@ class TopFiveViewModel @Inject constructor(
 
     fun createFavorite(emoji: String, title: String) {
         viewModelScope.launch(Dispatchers.IO + otherOperationExceptionHandler) {
-            favoriteId = createFavoriteUseCase(
-                Favorite(
-                    userEmail = currentUserUseCase()?.email ?: "",
-                    title = title,
-                    emoji = emoji,
-                    movies = emptyList(),
-                    id = ""
+            if (favoriteId.isNullOrBlank()) {
+                favoriteId = createFavoriteUseCase(
+                    Favorite(
+                        userEmail = currentUserUseCase()?.email ?: "",
+                        title = title,
+                        emoji = emoji,
+                        movies = emptyList(),
+                        id = ""
+                    )
                 )
-            )
+            } else {
+                favoriteId?.let {
+                    updateFavoriteUseCase(it, emoji, title)
+                }
+            }
+
             refreshData()
         }
 

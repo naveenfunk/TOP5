@@ -7,7 +7,7 @@ interface FavoritesRepository {
 
     suspend fun createFavorite(favorite: Favorite) : String
     suspend fun getFavorites(userEmail: String): List<Favorite>
-    suspend fun updateFavorite(favorite: Favorite)
+    suspend fun updateFavorite(favoriteId: String, emoji: String, title: String)
     suspend fun deleteFavorite(favoriteId: String)
     suspend fun getFavoritesByUserEmail(email: String): List<Favorite>
     suspend fun isCurrentUserOwnsFavorite(favoriteId: String): Boolean

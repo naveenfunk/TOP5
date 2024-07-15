@@ -8,7 +8,7 @@ class UpdateFavoriteUseCase @Inject constructor(
     private val favoritesRepository: FavoritesRepository
 ) {
 
-    suspend operator fun invoke(favorite: Favorite) {
-        favoritesRepository.updateFavorite(favorite = favorite)
+    suspend operator fun invoke(favoriteId: String, emoji:String, title: String) {
+        favoritesRepository.updateFavorite(favoriteId,emoji, title)
     }
 }

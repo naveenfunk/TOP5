@@ -19,8 +19,8 @@ class FavoritesRepositoryImpl @Inject constructor(
         return favoriteRemoteDataSource.getFavorites(userEmail).map { it.toDomain() }
     }
 
-    override suspend fun updateFavorite(favorite: Favorite) {
-        favoriteRemoteDataSource.updateFavorite(favorite.toDto())
+    override suspend fun updateFavorite(favoriteId: String,emoji: String, title: String) {
+        favoriteRemoteDataSource.updateFavorite(favoriteId,emoji, title)
     }
 
     override suspend fun deleteFavorite(favoriteId: String) {
