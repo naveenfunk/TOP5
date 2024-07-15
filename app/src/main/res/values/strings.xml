@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">TOP5</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_username">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="login">Login</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="empty_username">Username cannot be left blank!</string>
+    <string name="password_too_small">Password should be atleast of 6 characters!</string>
+    <string name="empty_password">Password cannot be left blank!</string>
+    <string name="something_went_wrong">Something went wrong!</string>
+    <string name="invalid_user_error">No user found for these details!</string>
+    <string name="invalid_credentials_error">Invalid credentials</string>
+    <string name="mismatch_password_exception">Password and confirm passwords doesn\'t match!</string>
+    <string name="user_already_exists">User with this email already exists. Please login!</string>
+    <string name="weak_password_error">Please enter strong password!</string>
+    <string name="loading_text">Loading . . .</string>
+    <string name="sign_up_success_message">Account created successfully. Please login!</string>
+    <string name="top_5">Top 5</string>
+    <string name="find_user">Find User</string>
+    <string name="add_top_5">Add TOP 5</string>
+    <string name="find_by_email">Find by email</string>
+    <string name="create">Create</string>
+    <string name="title">Title</string>
+    <string name="emoji_hint">🙂</string>
+    <string name="add_movie">Add Movie</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="search_by_name">Search by movie name</string>
+    <string name="logout">Logout</string>
+    <string name="update">Update</string>
+    <string name="my_favorites">My Favorites</string>
+</resources>
