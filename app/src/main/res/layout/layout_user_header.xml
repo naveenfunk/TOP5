@@ -8,28 +8,16 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/username"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:maxLines="2"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_l"
-            app:layout_constraintEnd_toStartOf="@id/findUser"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Testing@test.com" />
-
-        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/top5Header"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_m"
-            android:text="@string/top_5"
+            android:text="@string/my_favorites"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="@dimen/text_m"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/username" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatButton

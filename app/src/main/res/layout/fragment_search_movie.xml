@@ -7,10 +7,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/space_l"
-        tools:context=".features.user.ui.profile.ProfileFragment">
+        tools:context=".features.favorites.ui.profile.ProfileFragment">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/listTitle"
+            android:id="@+id/searchQuery"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_s"
@@ -19,12 +19,12 @@
             android:paddingHorizontal="@dimen/space_s"
             android:textColor="@color/black"
             android:textSize="@dimen/text_m"
-            app:layout_constraintEnd_toStartOf="@id/createList"
+            app:layout_constraintEnd_toStartOf="@id/search"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/createList"
+            android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="0dp"
@@ -41,7 +41,7 @@
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/listTitle"
+            app:layout_constraintTop_toBottomOf="@id/searchQuery"
             tools:itemCount="5"
             tools:listitem="@layout/item_movie_list" />
 

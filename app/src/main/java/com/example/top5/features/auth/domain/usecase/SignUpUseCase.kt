@@ -1,12 +1,12 @@
 package com.example.top5.features.auth.domain.usecase
 
-import com.example.top5.features.auth.data.repo.AuthRepository
+import com.example.top5.features.auth.data.repo.UserRepository
 import javax.inject.Inject
 
 class SignUpUseCase @Inject constructor(
-    private val authRepository: AuthRepository
+    private val userRepository: UserRepository
 ) {
     suspend operator fun invoke(username: String, password: String) {
-        authRepository.signUp(username, password)
+        userRepository.signUp(username, password)
     }
 }

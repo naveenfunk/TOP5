@@ -29,6 +29,8 @@
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="search">Search</string>
-    <string name="search_by_name">Search by name</string>
+    <string name="search_by_name">Search by movie name</string>
     <string name="logout">Logout</string>
+    <string name="update">Update</string>
+    <string name="my_favorites">My Favorites</string>
 </resources>

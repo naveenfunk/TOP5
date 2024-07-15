@@ -1,5 +1,6 @@
 package com.example.top5.features.auth.data.remote
 
+import com.example.top5.features.auth.data.models.UserDto
 import com.example.top5.features.auth.domain.models.BaseAuthException
 import com.example.top5.features.auth.domain.models.LoginException
 import com.example.top5.features.auth.domain.models.SignUpException
@@ -13,7 +14,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSource {
+class UserRemoteDataSourceImpl @Inject constructor() : UserRemoteDataSource {
 
     private var auth: FirebaseAuth = Firebase.auth
 
@@ -28,6 +29,12 @@ class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSource {
             }
         }
 
+    }
+
+    override fun getCurrentUser() : UserDto? {
+        return auth.currentUser?.let {
+            UserDto(id = it.uid, email = it.email ?: "")
+        }
     }
 
     override suspend fun signUp(username: String, password: String) {

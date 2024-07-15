@@ -1,6 +1,8 @@
 package com.example.top5.features.auth.data.repo
 
-interface AuthRepository {
+import com.example.top5.features.auth.domain.models.User
+
+interface UserRepository {
 
     suspend fun login(username: String, password: String)
 
@@ -10,4 +12,5 @@ interface AuthRepository {
 
     fun isUserLoggedIn() : Boolean
 
+    fun getCurrentUser(): User?
 }

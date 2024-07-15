@@ -49,17 +49,15 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.material
     implementation libs.retrofit
+    implementation libs.retrofit.gson
     implementation libs.room
     implementation libs.fragment
-    // Import the BoM for the Firebase platform
     implementation(platform(libs.firebaseBom))
-
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation libs.firebase.auth
+    implementation libs.bundles.firebase.bundle
     implementation libs.navigation.fragment
     implementation libs.navigation.ui
     implementation libs.androidx.activity
+    implementation libs.glide
     implementation libs.androidx.constraintlayout
     implementation libs.hilt
     kapt libs.hilt.kapt

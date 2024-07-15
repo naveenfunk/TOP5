@@ -1,8 +1,12 @@
 package com.example.top5.features.auth.data.remote
 
-interface AuthRemoteDataSource {
+import com.example.top5.features.auth.data.models.UserDto
+
+interface UserRemoteDataSource {
 
     suspend fun login(username: String, password: String)
+
+    fun getCurrentUser(): UserDto?
 
     suspend fun signUp(username: String, password: String)
 
